@@ -6,7 +6,7 @@
 ### Features
 
 - Features [NvChad v2.5](https://nvchad.com/news/v2.5_release)
-- Target OS: WSL2/Linux
+- Target OS: Android (Termux)
 - Modularised setup of plugins and configurations
 - Scripting with Bash, Lua and Toml as smooth as it gets
 - Web development with JS/TS, React and Astro **fully covered**
