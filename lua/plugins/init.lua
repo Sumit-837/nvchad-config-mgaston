@@ -60,6 +60,7 @@ return {
   { import = "plugins.spec.vim-astro" },
   { import = "plugins.spec.vim-illuminate" },
   { import = "plugins.spec.vim-visual-multi" },
+  { import = "plugins.spec.github-copilot" },
   { import = "plugins.spec.zen-mode" },
   { import = "plugins.override.base46" },
   { import = "plugins.override.blankline" },

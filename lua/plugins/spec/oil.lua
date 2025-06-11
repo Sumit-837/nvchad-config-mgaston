@@ -93,7 +93,7 @@ return {
       pattern = "Telescope*",
       group = augroup("OilTelescope", { clear = true }),
       callback = function(event)
-        buf_map(event.buf, "n", "<C-n>", "<nop>")
+        buf_map(event.buf, "n", "<C-e>", "<nop>")
       end,
     })
 
@@ -159,7 +159,7 @@ return {
       },
     }
 
-    map("n", "<C-n>", function()
+    map("n", "<C-e>", function()
       toggle_oil()
     end, { desc = "Open Oil" })
 

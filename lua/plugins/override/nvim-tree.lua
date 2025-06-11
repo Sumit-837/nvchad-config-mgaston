@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
-  enabled = false,
+  enabled = true,
   init = function()
     vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
   end,
@@ -140,32 +140,35 @@ return {
         },
       },
       view = {
-        -- Allow statuscolumn to be applied on nvim-tree
-        signcolumn = "no",
-        float = {
-          enable = true,
-          open_win_config = function()
-            local screen_w = vim.opt.columns:get()
-            local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-            local window_w = screen_w * SIZES.WIDTH
-            local window_h = screen_h * SIZES.HEIGHT
-            local window_w_int = math.floor(window_w)
-            local window_h_int = math.floor(window_h)
-            local center_x = (screen_w - window_w) / 2
-            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
-            return {
-              border = "rounded",
-              relative = "editor",
-              row = center_y,
-              col = center_x,
-              width = window_w_int,
-              height = window_h_int,
-            }
-          end,
-        },
-        width = function()
-          return math.floor(vim.opt.columns:get() * SIZES.WIDTH)
-        end,
+        width = 30,
+        side = "left",
+        signcolumn = "yes",
+        -- -- Allow statuscolumn to be applied on nvim-tree
+        -- signcolumn = "no",
+        -- float = {
+        --   enable = true,
+        --   open_win_config = function()
+        --     local screen_w = vim.opt.columns:get()
+        --     local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+        --     local window_w = screen_w * SIZES.WIDTH
+        --     local window_h = screen_h * SIZES.HEIGHT
+        --     local window_w_int = math.floor(window_w)
+        --     local window_h_int = math.floor(window_h)
+        --     local center_x = (screen_w - window_w) / 2
+        --     local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
+        --     return {
+        --       border = "rounded",
+        --       relative = "editor",
+        --       row = center_y,
+        --       col = center_x,
+        --       width = window_w_int,
+        --       height = window_h_int,
+        --     }
+        --   end,
+        -- },
+        -- width = function()
+        --   return math.floor(vim.opt.columns:get() * SIZES.WIDTH)
+        -- end,
       },
       filesystem_watchers = {
         ignore_dirs = {
